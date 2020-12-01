@@ -23,12 +23,10 @@ app.listen(3000, function() {
 //=========================================================
 //      Mount routes ---- middleware & static files
 //=========================================================
+app.use(express.static('css'));
+
 app.get('/', function(req, res) {
     res.render('home', { title: 'Home'});
-});
-
-app.get('/github', function(req, res) {
-    res.render('github', { title: 'Github'});
 });
 
 app.get('/projects', function(req, res) {
@@ -41,6 +39,16 @@ app.get('/projects', function(req, res) {
 app.get('/home', (req, res) => {
     res.redirect('/');
 });
+
+app.get('/linkedin', (req, res) => {
+    res.redirect('https://www.linkedin.com/in/tylerjpreston/');
+});
+
+app.get('/github', (req, res) => {
+    res.redirect('https://github.com/tjpreston96');
+});
+
+
 
 //=========================================================
 //                    404 Page
