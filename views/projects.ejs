@@ -3,13 +3,13 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <h2>PROJECTS:</h1>
+    <h2>PROJECTS:</h2>
     <ul>
         <% projects.forEach((p) => { %> 
             <li>
                 <%= p.projects %> 
                 -
-                <%= p.done ? 'done' : 'in progess' %> 
+                <%= p.done ? 'Done ✅' : '🚧 In Progess... 🚧' %> 
             </li>
         <% }); %>
     </ul>
