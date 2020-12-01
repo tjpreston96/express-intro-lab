@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const projectsDb = require('./data/projects-db')
 
 //=========================================================
 //                create express app
@@ -30,7 +31,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/projects', function(req, res) {
-    res.render('projects', { title: 'Projects'});
+    res.render('projects', {projects: projectsDb.getAll()})
 });
 
 //=========================================================
